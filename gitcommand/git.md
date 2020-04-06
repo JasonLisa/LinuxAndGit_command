@@ -1,4 +1,4 @@
-# **git命令**
+## **git命令**
 
 **1.本地创建版本库后,同步到github步骤**
 
@@ -38,9 +38,35 @@
 **4.切换远程库**
 > git remote set-url origin https://github.com/JasonLisa/mygit.git
 
-============================
+------
 
-# **git add 相关**
+## **git add 相关**
+
 > - git add -A  提交所有变化
 >- git add -u  提交被修改(modified)和被删除(deleted)文件，不包括新文件(new)
 >- git add .  提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件
+
+------
+
+## git restore 相关
+
+-  `git restore <file>`
+
+-  进行清除工作区的改变；同git chechout 文件名字    的作用是一样的；与git add .的作用相反
+
+- 表示将在工作空间但是不在暂存区的文件撤销更改
+
+
+
+git restore --staged 相关
+
+-  `git restore --staged <file>`
+- 作用是将暂存区的文件从暂存区撤出，但不会更改文件
+
+**总结**
+
+`git restore --staged` 将文件从暂存区撤出，但不会撤销文件的更改
+`git resore` 将不在暂存区的文件撤销更改
+
+
+

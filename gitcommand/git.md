@@ -70,3 +70,35 @@ git restore --staged 相关
 
 
 
+------
+
+### git status 相关
+
+[参考]: https://blog.csdn.net/u013374164/article/details/78831273	"status使用方式"
+
+------
+
+###  git checkout -- <file>
+
+-  就一名话：让这个文件回到最近一次`git commit`或`git add`时的状态；
+
+-   [参考]: https://www.jianshu.com/p/285302d1eb73	"git checkout --<file>真正用法"
+
+------
+
+`git restore`、`git restore --staged`、`git checkout -- <file>` 总结一下用法
+
+假如有一个文件readme.md 在各种区中的内容如下 
+
+工作区内容为123 ；暂存区内容为12 ；仓库内容为 1 ；
+
+- 如果想让工作区内容变为暂存区内容，直接`git resore`
+
+- 如果想让工作区内容变为仓库内容，先`git restore`或`git restore --staged`，然后再`git checkout -- <file>`
+
+    如果不小心直接`git checkout -- <file>`，则先`git resrore`或`git restore --staged`操作，再进行一次`git checkout -- <file>`；
+
+-  ***其实理解`git checkout -- <file>`、`git restore`或`git restore --staged` 命令，可以这样理解：它们不仅仅是把文件或谇内容恢复成相应的状态，而且还要撤销相应的操作；比如`git restore --staged`作用是将暂存区的文件从暂存区撤出，但不会更改文件；这句话的是意思是撤销这个文件的上一次的`git add`操作；这句话很重要，是撤销 ，是撤销的操作；所以以后理解类似的东西，要理解成撤销，并且是撤销的操作，不是撤销的文件***
+
+------
+

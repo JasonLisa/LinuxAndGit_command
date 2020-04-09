@@ -43,8 +43,10 @@
 ## **git add 相关**
 
 > - git add -A  提交所有变化
->- git add -u  提交被修改(modified)和被删除(deleted)文件，不包括新文件(new)
->- git add .  提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件
+> - git add -u  提交被修改(modified)和被删除(deleted)文件，不包括新文件(new)
+> - git add .  提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件
+> - git add -n 提交之前查看一下有哪些文件会被提交 比如运行`git add -n .`可以查看如果此时`git add .` 会有哪些文件会被添加到暂存区。只是想看一下而以，我个人是这么理解的。
+> - 例如有一个文件a.md在暂存区，现在修改了a.md。运行`git add -n .`则显示`add 'a.md'`。如果此时在工作区新建一文件b.md，再运行`git add -n .`则显示`add 'a.md'`和`add 'b.md'`。如果 运行` git add -n -u .`则显示`add 'a.md'`。
 
 ------
 
@@ -99,6 +101,10 @@ git restore --staged 相关
     如果不小心直接`git checkout -- <file>`，则先`git resrore`或`git restore --staged`操作，再进行一次`git checkout -- <file>`；
 
 -  ***其实理解`git checkout -- <file>`、`git restore`或`git restore --staged` 命令，可以这样理解：它们不仅仅是把文件或谇内容恢复成相应的状态，而且还要撤销相应的操作；比如`git restore --staged`作用是将暂存区的文件从暂存区撤出，但不会更改文件；这句话的是意思是撤销这个文件的上一次的`git add`操作；这句话很重要，是撤销 ，是撤销的操作；所以以后理解类似的东西，要理解成撤销，并且是撤销的操作，不是撤销的文件***
+
+------
+
+`git restore --staged filename`、`git reset HEAD file` 效果一样
 
 ------
 
